@@ -37,7 +37,7 @@ PhySGA uses a collaborative Feedforward-Feedback architecture to separate global
 3. **Action routing.** The Geometric, Articulated, and Velocity Routers ground the agents' semantic targets and adjustment analyses into executable geometric transformations, joint movements, and release velocities.
 4. **Skill evolution.** The Self-Evolving Skill Library retrieves compatible knowledge before a new task and distills the complete interaction memory and final physical outcome into reusable skills after execution.
 
-## BibTeX
+## Citation
 
 ```bibtex
 @misc{lyu2026physga,
