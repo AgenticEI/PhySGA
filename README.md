@@ -8,9 +8,9 @@
 [![Project Page](https://img.shields.io/badge/Project-Page-6d2077.svg)](https://agenticei.github.io/PhySGA-page/)
 [![License](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
 
-**[Weichen Lyu](https://matthew-lyu.github.io/)<sup>1,*</sup>, [Chong Xia](https://xiac20.github.io/)<sup>1,*</sup>, [Mingyu Dong](https://dongmingyu111.github.io/)<sup>1</sup>, [Long Xu](https://gaolon.github.io/xulong/)<sup>2</sup>, [Shengjun Zhang](https://shengjun-zhang.github.io/)<sup>1</sup>, [Yueqi Duan](https://duanyueqi.github.io/)<sup>1,†</sup>**<br>
+**[Weichen Lyu](https://matthew-lyu.github.io/)<sup>1,&#42;</sup>, [Chong Xia](https://xiac20.github.io/)<sup>1,&#42;</sup>, [Mingyu Dong](https://dongmingyu111.github.io/)<sup>1</sup>, [Long Xu](https://gaolon.github.io/xulong/)<sup>2</sup>, [Shengjun Zhang](https://shengjun-zhang.github.io/)<sup>1</sup>, [Yueqi Duan](https://duanyueqi.github.io/)<sup>1,†</sup>**<br>
 <sup>1</sup>Tsinghua University · <sup>2</sup>Zhejiang University<br>
-<sup>*</sup> Equal contribution · <sup>†</sup> Corresponding author
+<sup>&#42;</sup> Equal contribution · <sup>†</sup> Corresponding author
 
 </div>
 
@@ -18,21 +18,34 @@
 
 <!-- News will be added after the arXiv release. -->
 
-![PhySGA teaser](docs/assets/teaser.png)
+![PhySGA teaser](docs/assets/teaser.jpg)
 
 ## Overview
 
-PhySGA is a physics-space grounded agentic framework for generalizable and interactive 3D object composition. It treats 3D object composition as an interactive construction process in physical space, where an agent must plan the composition process, execute precise adjustments, observe physical outcomes, and refine the scene from simulation feedback.
+3D object composition aims to construct physically and functionally coherent interactions among independent object assets. Previous methods predominantly formulate this task as a one-shot prediction of final relative object poses, bypassing the physical interaction trajectory. However, complex compositions inherently depend on continuous contact dynamics and intermediate state transitions.
 
-The framework supports rigid, articulated, and deformable objects within a unified pipeline. A collaborative feedforward-feedback architecture separates global construction from fine-grained physical correction, while specialized Action Routers translate semantic decisions into executable simulator commands. A Self-Evolving Skill Library further distills experience from completed compositions into reusable task-specific guidance.
+PhySGA formulates 3D object composition as an interactive assembly process in physical space. Starting from an initial simulator state, the composition is achieved through a sequence of state transitions, including geometric transformations, dynamic velocity assignments, and physical simulation. This formulation supports interactive composition across rigid, articulated, and deformable objects.
 
 ## Method
 
 ![PhySGA pipeline](docs/assets/pipeline.png)
 
-PhySGA organizes 3D object composition into two complementary stages:
+PhySGA uses a collaborative Feedforward-Feedback architecture to separate global construction from physical correction:
 
-1. **Visual feedforward construction.** The Assembly Agent reasons about object geometry and kinematics, produces a chain-of-thought assembly plan, and executes metric-grounded coarse adjustments toward a physically meaningful release state.
-2. **Physical feedback refinement.** Physical simulation reveals contact, stability, articulation, and deformation outcomes. The Critic Agent diagnoses the simulated result and performs pixel-grounded fine-grained refinement until the objects establish the stable relation specified by the instruction.
+1. **Feedforward construction.** The Assembly Agent leverages geometric and kinematic reasoning to formulate a global plan and execute metric-grounded coarse adjustments.
+2. **Feedback refinement.** The Critic Agent analyzes simulated motion and contact feedback to diagnose physical failures, performing pixel-grounded fine-grained corrections until the target relation reaches physical equilibrium.
+3. **Action routing.** The Geometric, Articulated, and Velocity Routers ground the agents' semantic targets and adjustment analyses into executable geometric transformations, joint movements, and release velocities.
+4. **Skill evolution.** The Self-Evolving Skill Library retrieves compatible knowledge before a new task and distills the complete interaction memory and final physical outcome into reusable skills after execution.
 
-Throughout both stages, **Action Routers** convert the agents' semantic decisions into executable geometric operations, joint motions, and release velocities. After a composition succeeds, the **Self-Evolving Skill Library** summarizes the complete interaction experience for reuse in subsequent tasks.
+## BibTeX
+
+```bibtex
+@misc{lyu2026physga,
+  title  = {PhySGA: A Physics-Space Grounded Agentic Framework for
+            Generalizable and Interactive 3D Composition},
+  author = {Lyu, Weichen and Xia, Chong and Dong, Mingyu and Xu, Long and
+            Zhang, Shengjun and Duan, Yueqi},
+  year   = {2026},
+  note   = {Preprint}
+}
+```
