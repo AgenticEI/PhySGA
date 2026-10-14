@@ -14,10 +14,6 @@
 
 </div>
 
-## News
-
-<!-- News will be added after the arXiv release. -->
-
 ![PhySGA teaser](docs/assets/teaser.jpg)
 
 ## Overview
