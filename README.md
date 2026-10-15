@@ -4,7 +4,7 @@
 
 ### A Physics-Space Grounded Agentic Framework for Generalizable and Interactive 3D Composition
 
-![arXiv](https://img.shields.io/badge/arXiv-Coming%20Soon-b31b1b.svg)
+[![arXiv](https://img.shields.io/badge/arXiv-2610.20560-b31b1b.svg)](https://arxiv.org/abs/2610.20560)
 [![Project Page](https://img.shields.io/badge/Project-Page-6d2077.svg)](https://agenticei.github.io/PhySGA-page/)
 [![License](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
 
@@ -37,11 +37,12 @@ PhySGA uses a collaborative Feedforward-Feedback architecture to separate global
 
 ```bibtex
 @misc{lyu2026physga,
-  title  = {PhySGA: A Physics-Space Grounded Agentic Framework for
-            Generalizable and Interactive 3D Composition},
-  author = {Lyu, Weichen and Xia, Chong and Dong, Mingyu and Xu, Long and
-            Zhang, Shengjun and Duan, Yueqi},
-  year   = {2026},
-  note   = {Preprint}
+      title={PhySGA: A Physics-Space Grounded Agentic Framework for Generalizable and Interactive 3D Composition}, 
+      author={Weichen Lyu and Chong Xia and Mingyu Dong and Long Xu and Shengjun Zhang and Yueqi Duan},
+      year={2026},
+      eprint={2610.20560},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2610.20560}, 
 }
 ```
